@@ -8,11 +8,11 @@ script:
 - npm run dist
 - npm run dist:common
 - npm run build
-after_script:
-- cd ./_site
-- git init
-- git config --global user.name 'guzhongren'
-- git config --global user.email 'guzhongren@live.cn'
-- git add .
-- git commit -m "update website"
-- git push --force --quiet "https://${TRAVIS_GITHUB}@github.com/sakitam-gis/react-map" master:gh-pages
+# after_script:
+# - cd ./_site
+# - git init
+# - git config --global user.name 'guzhongren'
+# - git config --global user.email 'guzhongren@live.cn'
+# - git add .
+# - git commit -m "update website"
+# - git push --force --quiet "https://${TRAVIS_GITHUB}@github.com/sakitam-gis/react-map" master:gh-pages
