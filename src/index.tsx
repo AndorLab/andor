@@ -1,5 +1,5 @@
-import Hello from './antdTest/index.tsx';
-import 'antd/dist/antd.css';
+import Hello from './components/antdTest/index'
+import 'antd/dist/antd.less'
 
 export {
   Hello

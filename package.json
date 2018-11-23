@@ -1,6 +1,6 @@
 {
   "name": "andor",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "private": false,
   "license": "MIT",
   "scripts": {
@@ -15,6 +15,7 @@
     "_typeCheck": "tsc --project tsconfig.json --noEmit",
     "_tsLint": "tslint -p ./tsconfig.json ./src/**/*.{ts,tsx}",
     "release": "standard-version --release-as patch",
+    "onlineRelease": "standard-version --release-as patch && git push --follow-tags origin master && npm publish",
     "minorRelease": "standard-version --release-as minor",
     "majorRelease": "standard-version --release-as major",
     "doc": "styleguidist build",
@@ -22,7 +23,7 @@
     "getstorybook": "getstorybook",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "pub": "yarn build && npm publish --access=public"
+    "pub": "npm publish --access=public"
   },
   "main": "dist/lib/andor.js",
   "module": "dist/lib/andor.js",
