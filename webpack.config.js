@@ -5,21 +5,21 @@ const path = require('path')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const WebpackParallelUglifyPlugin = require('webpack-parallel-uglify-plugin')
-const HappyPack = require('happypack')
+// const HappyPack = require('happypack')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const publicUrl = '/'
 module.exports = {
   mode: isProduction ? 'production' : 'development',
   entry: {
-    andor: ['@babel/polyfill', './src/index.tsx']
+    index: ['@babel/polyfill', './src/index.tsx']
   },
   output: {
-    filename: 'lib/[name].js',
-    chunkFilename: 'lib/[name].js',
-    path: path.resolve(__dirname, './dist/'),
+    filename: '[name].js',
+    chunkFilename: '[name].js',
+    path: path.resolve(__dirname, './dist/lib'),
     publicPath: publicUrl,
-    library: 'andor',
+    library: 'index',
     libraryTarget: 'umd2'
   },
   devServer: {
@@ -112,7 +112,8 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 8192,
-          name: 'images/[hash:6].[ext]',
+          // name: 'images/[hash:6].[ext]',
+          name: path.posix.join('./', 'images/[hash:6].[ext]'),
           fallback: 'file-loader'
         }
       }]

@@ -1,6 +1,6 @@
 {
   "name": "andor",
-  "version": "0.0.6",
+  "version": "0.0.14",
   "private": false,
   "license": "MIT",
   "scripts": {
@@ -25,11 +25,11 @@
     "build-storybook": "build-storybook",
     "pub": "npm publish --access=public"
   },
-  "main": "dist/lib/andor.js",
-  "module": "dist/lib/andor.js",
-  "unpkg": "dist/lib/andor.js",
-  "types": "dist/index.d.ts",
-  "style": "dist/lib/style/andor.css",
+  "main": "dist/lib/index.js",
+  "module": "dist/lib/index.js",
+  "unpkg": "dist/lib/index.js",
+  "types": "dist/types/index.d.ts",
+  "style": "dist/lib/style/index.css",
   "files": [
     "dist"
   ],
