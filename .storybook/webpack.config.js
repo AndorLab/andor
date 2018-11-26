@@ -25,9 +25,9 @@ module.exports = (baseConfig, env, config) => {
   }, {
     test: /\.(le|sa|sc|c)ss$/,
     use: [
-      'style-loader',
+      require.resolve('style-loader'),
       {
-        loader: 'css-loader',
+        loader: require.resolve('css-loader'),
         options: {
           importLoaders: 1,
           // modules: true,
@@ -36,17 +36,17 @@ module.exports = (baseConfig, env, config) => {
         }
       },
       {
-        loader: 'postcss-loader',
+        loader: require.resolve('postcss-loader'),
         options: {
           sourceMap: false,
           ident: 'postcss'
         }
       },
       {
-        loader: 'resolve-url-loader'
+        loader: require.resolve('resolve-url-loader')
       },
       {
-        loader: 'less-loader',
+        loader: require.resolve('less-loader'),
         options: {
           javascriptEnabled: true,
           sourceMap: false

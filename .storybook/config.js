@@ -2,7 +2,6 @@ import { configure, setAddon,addDecorator } from '@storybook/react';
 import infoAddon, { setDefaults } from '@storybook/addon-info'
 import { setOptions } from '@storybook/addon-options'
 import { withKnobs } from '@storybook/addon-knobs/react';
-import { cyan } from 'ansi-colors';
 addDecorator(withKnobs);
 setOptions({
     name: 'SummitWeb基础组件',

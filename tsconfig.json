@@ -1,18 +1,17 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "src",
     "outDir": "build/dist",
     "moduleResolution": "node",
     "module": "esnext",
     "target": "es5",
     "declaration": true,
     "declarationDir": "dist/types",
-    "lib": [
-      "es6",
-      "dom"
-    ],
+    "lib":["es5", "es6", "es7", "es2017", "dom"],
     "sourceMap": true,
     "jsx": "react",
+    "allowJs": false,
+    "moduleResolution": "node",
     "rootDir": "src/",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,

@@ -1,6 +1,6 @@
 {
   "name": "andor",
-  "version": "0.0.16",
+  "version": "0.0.18",
   "private": false,
   "license": "MIT",
   "scripts": {
@@ -20,9 +20,9 @@
     "majorRelease": "standard-version --release-as major",
     "doc": "styleguidist build",
     "docServer": "styleguidist server",
-    "getstorybook": "getstorybook",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "getsb": "getstorybook",
+    "sb": "start-storybook -p 6006 -s storySite",
+    "build-storybook": "build-storybook -s storySite",
     "pub": "npm publish --access=public"
   },
   "main": "dist/lib/index.js",
@@ -62,6 +62,9 @@
     "> 1%",
     "not ie <= 9"
   ],
+  "resolutions": {
+    "babel-core": "^7.0.0-bridge.0"
+  },
   "jest": {
     "collectCoverage": false,
     "collectCoverageFrom": [
@@ -124,13 +127,15 @@
     "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.1.2",
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/polyfill": "^7.0.0",
-    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-env": "^7.1.6",
     "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.1.0",
     "@storybook/addon-actions": "^4.0.0",
     "@storybook/addon-info": "^4.0.0",
     "@storybook/addon-knobs": "^4.0.0",
@@ -143,16 +148,18 @@
     "@types/enzyme": "^3.1.14",
     "@types/enzyme-adapter-react-16": "^1.0.3",
     "@types/jest": "^23.3.5",
-    "@types/node": "^10.3.2",
+    "@types/node": "^10.12.10",
     "@types/react": "^16.3.17",
     "@types/react-dom": "^16.0.6",
+    "@types/storybook__addon-info": "^3.4.2",
+    "@types/storybook__addon-links": "^3.3.3",
+    "@types/storybook__react": "^4.0.0",
     "autoprefixer": "^9.1.5",
     "awesome-typescript-loader": "^5.2.0",
     "axios-mock-adapter": "^1.15.0",
     "axios-progress-bar": "^1.2.0",
     "babel-cli": "^6.26.0",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-eslint": "^10.0.1",
+    "babel-core": "7.0.0-bridge.0",
     "babel-loader": "^8.0.2",
     "babel-plugin-import": "^1.7.0",
     "babel-plugin-transform-runtime": "^6.23.0",
@@ -208,7 +215,7 @@
     "tslint": "^5.10.0",
     "tslint-config-prettier": "^1.13.0",
     "tslint-react": "^3.6.0",
-    "typescript": "^3.0.1",
+    "typescript": "^3.1.6",
     "url-loader": "^1.0.1",
     "webpack": "^4.11.1",
     "webpack-bundle-analyzer": "^3.0.2",

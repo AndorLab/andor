@@ -112,8 +112,8 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 8192,
-          name: 'images/[hash:6].[ext]',
-          // name: path.posix.join('dist/lib', 'images/[hash:6].[ext]'),
+          // name: 'images/[hash:6].[ext]',
+          name: path.posix.join('./', 'images/[hash:6].[ext]'),
           fallback: 'file-loader'
         }
       }]
