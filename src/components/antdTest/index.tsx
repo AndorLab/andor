@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Button } from 'antd'
-import logo from '@assets/logo.svg'
-// import back from '@assets/back.jpg'
+import logo from '../../assets/logo.svg'
+// import back from '../../assets/back.jpg'
 export interface IHelloProps {
   imgPath?: string | React.ReactNode
 }

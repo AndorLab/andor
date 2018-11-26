@@ -7,18 +7,18 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const WebpackParallelUglifyPlugin = require('webpack-parallel-uglify-plugin')
 // const HappyPack = require('happypack')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-const publicUrl = '/'
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+// const publicUrl = '/'
 module.exports = {
   mode: isProduction ? 'production' : 'development',
   entry: {
-    index: ['@babel/polyfill', './src/index.tsx']
+    index: ['@babel/polyfill', (isProduction ? './src/index.tsx' : './src/example/index')]
   },
   output: {
     filename: '[name].js',
     chunkFilename: '[name].js',
     path: path.resolve(__dirname, './dist/lib'),
-    publicPath: publicUrl,
+    // publicPath: publicUrl,
     library: 'index',
     libraryTarget: 'umd2'
   },
@@ -68,7 +68,7 @@ module.exports = {
     {
       enforce: 'pre',
       test: /\.js$/,
-      exclude: /node_modules/,
+      // exclude: /node_modules/,
       use: [
         'babel-loader'
       ]
@@ -107,13 +107,13 @@ module.exports = {
       ]
     },
     {
-      test: /\.(png|jpg|jpeg|gif|svg|ico|cur)(\?[=a-z0-9]+)?$/,
+      test: /\.(png|jpg|jpeg|webp|gif|svg|ico|cur)(\?[=a-z0-9]+)?$/,
       use: [{
         loader: 'url-loader',
         options: {
           limit: 8192,
-          // name: 'images/[hash:6].[ext]',
-          name: path.posix.join('./', 'images/[hash:6].[ext]'),
+          name: 'images/[hash:6].[ext]',
+          // name: path.posix.join('dist/lib', 'images/[hash:6].[ext]'),
           fallback: 'file-loader'
         }
       }]
@@ -168,20 +168,20 @@ module.exports = {
           reduce_vars: true
         }
       }
+    }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      analyzerHost: '127.0.0.1',
+      analyzerPort: 8889,
+      reportFilename: 'report.html',
+      defaultSizes: 'parsed',
+      openAnalyzer: true,
+      generateStatsFile: false,
+      statsFilename: 'stats.json',
+      statsOptions: null,
+      logLevel: 'info',
+      excludeAssets: null,
+      startAnalyzer: true
     })
-    // new BundleAnalyzerPlugin({
-    //   analyzerMode: 'static',
-    //   analyzerHost: '127.0.0.1',
-    //   analyzerPort: 8889,
-    //   reportFilename: 'report.html',
-    //   defaultSizes: 'parsed',
-    //   openAnalyzer: true,
-    //   generateStatsFile: false,
-    //   statsFilename: 'stats.json',
-    //   statsOptions: null,
-    //   logLevel: 'info',
-    //   excludeAssets: null,
-    //   startAnalyzer: true
-    // })
   ])
 }
