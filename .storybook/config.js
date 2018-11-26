@@ -1,8 +1,8 @@
-import { configure, setAddon,addDecorator } from '@storybook/react';
+import { configure, setAddon, addDecorator } from '@storybook/react'
 import infoAddon, { setDefaults } from '@storybook/addon-info'
 import { setOptions } from '@storybook/addon-options'
-import { withKnobs } from '@storybook/addon-knobs/react';
-addDecorator(withKnobs);
+import { withKnobs } from '@storybook/addon-knobs/react'
+addDecorator(withKnobs)
 setOptions({
     name: 'SummitWeb基础组件',
     url: 'https://andorlab.summit.com',
@@ -12,7 +12,7 @@ setOptions({
     // showSearchBox: false,
     addonPanelInRight: true,
     sortStoriesByKind: true
-});
+})
 setDefaults({
     inline: true,
     header: true,
@@ -29,12 +29,12 @@ setDefaults({
     },
     maxPropsIntoLine: 1
     // propTablesExclude: [ReadmeContainer, DefaultPreview]
-});
+})
 
-const req = require.context('../src', true, /.stories.tsx$/);
+const req = require.context('../src', true, /.stories.tsx$/)
 function loadStories() {
-  req.keys().forEach(filename => req(filename));
+  req.keys().forEach(filename => req(filename))
 }
-setAddon(infoAddon);
+setAddon(infoAddon)
 
-configure(loadStories, module);
+configure(loadStories, module)

@@ -128,5 +128,4 @@ class SubmitInfo extends React.Component<IProps, IState> {
   }
 }
 
-// SubmitInfo.Type = InputType
 export default SubmitInfo
