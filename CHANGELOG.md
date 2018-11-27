@@ -9,4 +9,3 @@ All notable changes to this project will be documented in this file. See [standa
 ### Features
 
 * **andor:** 初始化工程 ([3b2cfa2](https://github.com/AndorLab/andor/commit/3b2cfa2))
-* **andor:** 初始化工程 ([c1be302](https://github.com/AndorLab/andor/commit/c1be302))
