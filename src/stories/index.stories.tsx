@@ -9,8 +9,10 @@ import { withInfo } from '@storybook/addon-info'
 // import { CenterDecorator } from '../src/decorators/CenterDecorator'
 
 import { Button, Welcome } from '@storybook/react/demo'
-// import {Hello} from '../index'
+import { Hello, SubmitInfo } from '../index'
+const InputType = SubmitInfo.Type
 import ColorButton from './ColorButton'
+
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />)
 
 storiesOf('Demo', module)
@@ -23,12 +25,16 @@ storiesOf('Demo', module)
   .add(
     'ColorButton with color panel',
     withInfo(`import ColorButton from './ColorButton'`)(() => (
-      
+
       <ColorButton color={color('color', 'green')}>Color Button</ColorButton>
     )),
   )
-  
+
 storiesOf('Button', module)
   // .addDecorator(CenterDecorator)
   .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
   .add('with some emoji', () => <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>)
+storiesOf('Hello', module)
+  // .addDecorator(CenterDecorator)
+  .add('with text', () => <Hello />)
+  .add('SubmitInfo', () => <SubmitInfo type={InputType.Input}/>)

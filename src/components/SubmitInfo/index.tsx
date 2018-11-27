@@ -1,8 +1,5 @@
 import * as React from 'react'
 import { Input, DatePicker, InputNumber } from 'antd'
-import moment from 'moment'
-import 'moment/locale/zh-cn'
-moment.locale('zh-cn')
 // import moment from 'moment'
 import './index.less'
 const {MonthPicker} = DatePicker
