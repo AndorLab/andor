@@ -1,6 +1,25 @@
 {
-  "todo": [],
+  "done": [],
   "in-progress": [],
   "testing": [],
-  "done": []
+  "todo": [
+    {
+      "assignedTo": {
+        "name": "guzhongren"
+      },
+      "creation_time": "2018-11-27T07:37:09.296Z",
+      "description": {
+        "content": "使用react-docgen-typescript-loader库，生成不了组件属性",
+        "mime": "text/markdown"
+      },
+      "details": {
+        "content": "- [] 解决组件属性文档生成不了的bug",
+        "mime": "text/markdown"
+      },
+      "id": "1",
+      "references": [],
+      "title": "解决组件属性文档生成不了的bug",
+      "type": "emergency"
+    }
+  ]
 }

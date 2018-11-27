@@ -3,6 +3,9 @@ import { Button } from 'antd'
 import logo from '../../assets/logo.svg'
 // import back from '../../assets/back.jpg'
 export interface IHelloProps {
+  /**
+   * 图片路径
+   */
   imgPath?: string | React.ReactNode
 }
 const Hello = (props: IHelloProps) => {

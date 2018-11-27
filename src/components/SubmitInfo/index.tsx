@@ -29,7 +29,10 @@ interface IProps {
    * Input　失去焦点事件
    */
   onBlur?: (value: string) => void,
-  type: InputType, // 输入框类型
+  /**
+   * 输入框类型
+   */
+  type: InputType,
 }
 interface IState {
   /**

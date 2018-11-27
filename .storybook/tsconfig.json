@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "outDir": "build/dist",
+    "moduleResolution": "node",
+    "module": "esnext",
+    "target": "es5",
+    "declaration": true,
+    "declarationDir": "dist/types",
+    "lib":["es5", "es6", "es7", "es2017", "dom"],
+    "sourceMap": true,
+    "jsx": "react",
+    "allowJs": false,
+    "rootDir": "src/",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@components/*": ["./src/components/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@stories/*": ["./src/stories/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@theme/*": ["./src/theme/*"],
+    }
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "scripts",
+    "acceptance-tests",
+    "webpack",
+    "jest",
+    "src/setupTests.ts",
+    "webpack.config.js",
+    "webpack.vendor.js",
+    "postcss.config.js",
+    "public/dist"
+  ]
+}

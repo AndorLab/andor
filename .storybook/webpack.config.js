@@ -1,8 +1,6 @@
 const path = require('path')
 
 // const HappyPack = require('happypack')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-
 const TSDocgenPlugin = require('react-docgen-typescript-webpack-plugin')
 module.exports = (baseConfig, env, config) => {
   config.resolve.extensions.push('.ts', '.tsx', '.js', '.json', '.md')
@@ -32,32 +30,31 @@ module.exports = (baseConfig, env, config) => {
   }, {
     test: /\.(le|sa|sc|c)ss$/,
     use: [
-      'css-hot-loader',
-      MiniCssExtractPlugin.loader,
+      require.resolve('style-loader'),
       {
-        loader: 'css-loader',
+        loader: require.resolve('css-loader'),
         options: {
           importLoaders: 1,
           // modules: true,
           localIdentName: '[local]_[hash:base64:6]',
-          minimize: true
+          minimize: false
         }
       },
       {
-        loader: 'postcss-loader',
+        loader: require.resolve('postcss-loader'),
         options: {
-          sourceMap: !true,
+          sourceMap: false,
           ident: 'postcss'
         }
       },
       {
-        loader: 'resolve-url-loader'
+        loader: require.resolve('resolve-url-loader')
       },
       {
-        loader: 'less-loader',
+        loader: require.resolve('less-loader'),
         options: {
           javascriptEnabled: true,
-          sourceMap: !true
+          sourceMap: false
         }
       }
     ]
@@ -65,8 +62,5 @@ module.exports = (baseConfig, env, config) => {
   config.resolve.extensions.push('.ts', '.tsx')
   // Extend it as you need.
   config.plugins.push(new TSDocgenPlugin())
-  config.plugins.push(new MiniCssExtractPlugin({
-    filename: 'static/style/[name].css'
-  }))
   return config
 }
